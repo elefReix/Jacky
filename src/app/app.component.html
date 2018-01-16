@@ -1,50 +1,49 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Hola {{ title }}!
   </h1>
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-7">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
       <ngb-accordion #acc="ngbAccordion">
-        <ngb-panel id="toggle-1" title="First panel">
+        <ngb-panel id="toggle-1" title="Has click aquí ">
           <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
+              <p>
+                  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+                          [attr.aria-expanded]="isCollapsed" aria-controls="collapseExample" placement="top" ngbTooltip="Te quiero">
+                    Ahora aquí
+                  </button>
+                </p>
+                <div id="collapseExample" [ngbCollapse]="!isCollapsed">
+                  <div class="card">
+                    <div class="card-body">
+                      Abre el panel de abajo 
+                    </div>
+                  </div>
+                </div>
           </ng-template>
         </ngb-panel>
-        <ngb-panel id="toggle-2" title="Second">
+        <ngb-panel id="toggle-2" title="Panel de abajo">
           <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
+              <p>
+                  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+                          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" placement="top" ngbTooltip="Te quiero">
+                    Un último click 
+                  </button>
+                </p>
+                <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                  <div class="card">
+                    <div class="card-body">
+                      Te quiero mucho Jacky Duque mucho!!
+                    </div>
+                  </div>
+                </div>
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
     </div>
-    <div class="col-md-3">
-      <p>
-        <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" placement="top" ngbTooltip="Tooltip on top">
-          Dame click
-        </button>
-      </p>
-      <div id="collapseExample" [ngbCollapse]="isCollapsed">
-        <div class="card">
-          <div class="card-body">
-            You can collapse this card by clicking Toggle
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-3"></div>
   </div>
   
 
