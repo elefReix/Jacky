@@ -26,24 +26,33 @@
         </ngb-panel>
         <ngb-panel id="toggle-2" title="Panel de abajo">
           <ng-template ngbPanelContent>
-              <p>
-                  <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-                          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" placement="top" ngbTooltip="Te quiero">
-                    Un último click 
-                  </button>
-                </p>
-                <div id="collapseExample" [ngbCollapse]="isCollapsed">
-                  <div class="card">
-                    <div class="card-body">
-                      Te quiero mucho Jacky Duque mucho!!
-                    </div>
-                  </div>
-                </div>
+              
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Señorita Duque</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>La quiero muchisímo&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Salir</button>
+  </div>
+</ng-template>
+
+<button placement="top" ngbTooltip="16/01/18" class="btn btn-lg btn-outline-primary" (click)="open(content)">Último click</button>
+
+
+
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
     </div>
     <div class="col-md-3"></div>
+    
   </div>
   
 
