@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Empresa } from './Empresa';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,9 +9,41 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Jacky';
+export class AppComponent implements OnInit{
+  visitante = 'Jacky';
+  fecha = '24/09/2018';
   closeResult: string;
+  skills = ['JavaScript', 'Angular', 'JSP', 'JSLT','Java','MySQL','Oracle'];
+  //Lista de empresas a partir de la clase Empresa
+  Empresas: Empresa[] = [
+    {
+        Empresa : "Sineti Consulting ",
+        web : "http://sineti.com",
+        proyecto : "CFDI middleware",
+        puesto : "Consultor Java"
+    },
+    {
+        Empresa : "DC Mayorista ",
+        web : "http://www.dcm.com.mx/",
+        proyecto : "Blitz",
+        puesto : "Analista programador Java"
+    },
+    {
+        Empresa : "Global Hitss",
+        web : "https://www.globalhitss.com/",
+        proyecto : "....",
+        puesto : "Desarrollador web [JAVA]"
+    }
+];
+  ngOnInit (){
+    //Fucnones a carga cuando se carga la aplicacion 
+    }
+
+  empresaSeleccionada: Empresa;
+
+onSelect(emSelect: Empresa): void {
+  this.empresaSeleccionada = emSelect;
+}
 
   constructor(private modalService: NgbModal) {}
 
